@@ -49,7 +49,7 @@ using (var scope = app.Services.CreateScope())
 
     var testUserPw = builder.Configuration.GetValue<string>("SeedUserPW");
 
-    await SeedData.Initialize(services, testUserPw);
+    await SeedData.Initialize(services,testUserPw);
 }
 
 // Configure the HTTP request pipeline.

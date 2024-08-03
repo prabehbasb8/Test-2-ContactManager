@@ -44,7 +44,7 @@ namespace ContactManager.Data
                     UserName = UserName,
                     EmailConfirmed = true
                 };
-                await userManager.CreateAsync(user, testUserPw);
+                 await userManager.CreateAsync(user, testUserPw);
             }
 
             if (user == null)
