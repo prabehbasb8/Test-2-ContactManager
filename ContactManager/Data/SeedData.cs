@@ -1,7 +1,8 @@
 ﻿using ContactManager.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic;
+//using Microsoft.VisualBasic;
+using ContactManager.Authorization;
 
 // dotnet aspnet-codegenerator razorpage -m Contact -dc ApplicationDbContext -udl -outDir Pages\Contacts --referenceScriptLibraries
 
@@ -43,7 +44,7 @@ namespace ContactManager.Data
                     UserName = UserName,
                     EmailConfirmed = true
                 };
-                await userManager.CreateAsync(user, testUserPw);
+                 await userManager.CreateAsync(user, testUserPw);
             }
 
             if (user == null)
@@ -138,7 +139,7 @@ namespace ContactManager.Data
                     State = "WA",
                     Zip = "10999",
                     Email = "jon@example.com",
-                    Status = ContactStatus.Approved,
+                    Status = ContactStatus.Submitted,
                     OwnerID = adminID
                 },
                 new Contact
@@ -149,7 +150,7 @@ namespace ContactManager.Data
                     State = "WA",
                     Zip = "10999",
                     Email = "diliana@example.com",
-                    Status = ContactStatus.Approved,
+                    Status = ContactStatus.Rejected,
                     OwnerID = adminID
                 }
              );
